@@ -1,13 +1,22 @@
 package conta;
 
 import java.util.Scanner;
-
+import conta.model.Conta;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-
+		
+		// Teste de Classe Conta
+		Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
+		c1.vizualizar();
+		c1.sacar(12000.0f);
+		c1.vizualizar();
+		c1.depositar(5000.0f);
+		c1.vizualizar();
+		
+		
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
@@ -17,7 +26,7 @@ public class Menu {
 			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND  
 							  +"*****************************************************");
 			System.out.println("                                                     ");
-			System.out.println("                 BANCO DO BRAZIL                     ");
+			System.out.println("                 BANCO DO BRAZIL COM Z               ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("                                                     ");
