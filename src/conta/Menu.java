@@ -1,30 +1,38 @@
 package conta;
 
 import java.util.Scanner;
-import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.util.Cores;
 
 public class Menu {
 
 	public static void main(String[] args) {
-		
-		// Teste de Classe Conta
-		Conta c1 = new Conta(1, 123, 1, "Adriana", 10000.0f);
-		c1.vizualizar();
-		c1.sacar(12000.0f);
-		c1.vizualizar();
-		c1.depositar(5000.0f);
-		c1.vizualizar();
-		
-		
+
+		// Teste da Classe Conta Corrente
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Mariana", 15000.0f, 1000.0f);
+		cc1.visualiazar();
+		cc1.sacar(12000.0f);
+		cc1.visualiazar();
+		cc1.depositar(5000.0f);
+		cc1.visualiazar();
+
+		// Teste da Classe Conta Poupança
+		ContaPoupanca cp1 = new ContaPoupanca(3, 123, 2, "Victor", 100000.0f, 15);
+		cp1.visualizar();
+		cp1.sacar(1000.0f);
+		cp1.visualizar();
+		cp1.depositar(5000.0f);
+		cp1.visualizar();
+
 		Scanner leia = new Scanner(System.in);
 
 		int opcao;
 
 		while (true) {
-			
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND  
-							  +"*****************************************************");
+
+			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
+					+ "*****************************************************");
 			System.out.println("                                                     ");
 			System.out.println("                 BANCO DO BRAZIL COM Z               ");
 			System.out.println("                                                     ");
@@ -42,7 +50,7 @@ public class Menu {
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
-			System.out.println("                                                     "+ Cores.TEXT_RESET);
+			System.out.println("                                                     " + Cores.TEXT_RESET);
 
 			opcao = leia.nextInt();
 
@@ -55,19 +63,19 @@ public class Menu {
 
 			switch (opcao) {
 			case 1:
-				System.out.println(Cores.TEXT_WHITE+ "Criar conta \n\n");
+				System.out.println(Cores.TEXT_WHITE + "Criar conta \n\n");
 
 				break;
 			case 2:
-				System.out.println(Cores.TEXT_WHITE +"Listar todas as Contasz\n\n");
+				System.out.println(Cores.TEXT_WHITE + "Listar todas as Contasz\n\n");
 
 				break;
 			case 3:
-				System.out.println(Cores.TEXT_WHITE +"Consultar dados da Conta - por número\n\n");
+				System.out.println(Cores.TEXT_WHITE + "Consultar dados da Conta - por número\n\n");
 
 				break;
 			case 4:
-				System.out.println(Cores.TEXT_WHITE +"Atualizar dados Conta\n\n");
+				System.out.println(Cores.TEXT_WHITE + "Atualizar dados Conta\n\n");
 
 				break;
 			case 5:

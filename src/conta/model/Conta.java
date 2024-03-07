@@ -1,35 +1,36 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 
 	// Atributos / Caracteristicas
-	
+
 	// Encapsulamento : Encapsular/Proteger algo
 	// Private / Protected / Public / Friendly
-	
+
 	private int numero;
 	private int agencia;
 	private int tipo;
 	private String titular;
 	private float saldo;
-	
-	// Método Construtor => que auxilia na criação/instanciação de um Objeto da Classe
+
+	// Método Construtor => que auxilia na criação/instanciação de um Objeto da
+	// Classe
 	public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
-		
+
 		// this(Essa): representa o nome da própria Classe (Conta)
-		
-		this.numero = numero;  // Conta.numero recebe o valor do arg.numero
+
+		this.numero = numero; // Conta.numero recebe o valor do arg.numero
 		this.agencia = agencia;
 		this.tipo = tipo;
 		this.titular = titular;
 		this.saldo = saldo;
 	}
-	
-	// Meódodos de Acesso (Método Get/Getter - Método  Set/Setter)
+
+	// Meódodos de Acesso (Método Get/Getter - Método Set/Setter)
 	public int getNumero() {
 		return numero;
 	}
-	
+
 	public void setNumero(int numeroConta) {
 		this.numero = numeroConta;
 	}
@@ -65,24 +66,24 @@ public class Conta {
 	public void setSaldo(float saldo) {
 		this.saldo = saldo;
 	}
-	
+
 	public boolean sacar(float valor) {
-		if(this.getSaldo() < valor) {
+		if (this.getSaldo() < valor) {
 			System.out.println("\n Saldo Insuficiente!");
 			return false;
 		}
 		this.setSaldo(this.getSaldo() - valor);
 		return true;
 	}
-	
+
 	public void depositar(float valor) {
 		this.setSaldo(this.getSaldo() + valor);
 	}
-	
-	public void vizualizar() {
-		
+
+	public void visualizar() {
+
 		String tipo = "";
-		
+
 		switch (this.tipo) {
 		case 1:
 			tipo = "Conta Corrente";
@@ -95,16 +96,12 @@ public class Conta {
 		System.out.println("Dados da Conta:");
 		System.out.println("************************************************************");
 		System.out.println("Numero da Conta: " + this.numero);
-		System.out.println("Agencia: " +this.agencia);
-		System.out.println("Tipo da Conta: " +tipo);
+		System.out.println("Agencia: " + this.agencia);
+		System.out.println("Tipo da Conta: " + tipo);
 		System.out.println("Titular: " + this.titular);
 		System.out.println("Saldo: " + this.saldo);
 	}
-	
-	
-	
-	//Métodos /Ações
-	
-	//Método Visualizar
-	
+
 }
+
+
